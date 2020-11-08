@@ -18,5 +18,15 @@ class CompanySeeder extends Seeder
             'cnpj' => Str::random(10),
             'address' => "Rua XXXXX, XXXX - XXXXXX - Belo Horizonte / MG"
         ]);
+        DB::table('companies')->insert([
+            'name' => "DevComp",
+            'cnpj' => Str::random(10),
+            'address' => "Rua XXXXX, XXXX - XXXXXX - São Paulo / SP"
+        ]);
+        DB::table('companies')->insert([
+            'name' => "Fantasy",
+            'cnpj' => Str::random(10),
+            'address' => "Rua XXXXX, XXXX - XXXXXX - Rio de Janeiro / RJ"
+        ]);
     }
 }
