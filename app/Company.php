@@ -14,10 +14,10 @@ class Company extends Model
     ];
 
     /**
-     * Get the employees for Company.
+     * Get the employees on the Company.
      */
     public function employees()
     {
-        return $this->hasMany('App\Models\Employee');
+        return $this->hasMany('App\Employee');
     }
 }

@@ -10,12 +10,16 @@ class CompanyController extends Controller
 	
     public function listCompanies(Request $request)
     {
-    	return Company::get();
+        return Company::get();
+        
     }
 
     public function getCompany(Request $request)
     {
-    	return Company::findOrFail($request->id);
+        $employees = collect(Company::find($request->id)->employees);
+        $company = collect(Company::findOrFail($request->id));
+        $merge = $company->merge(['employees' => $employees]); 
+        return $merge->all(); 
     }
 
     public function createCompany(Request $request)
