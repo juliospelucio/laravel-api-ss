@@ -12,5 +12,12 @@ class Company extends Model
     protected $fillable = [
         'name', 'cnpj', 'address',
     ];
-    
+
+    /**
+     * Get the employees for Company.
+     */
+    public function employees()
+    {
+        return $this->hasMany('App\Models\Employee');
+    }
 }
